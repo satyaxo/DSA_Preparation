@@ -16,7 +16,9 @@ public class ZerosToEnd {
             arr[i] = sc.nextInt();
         }
         // System.out.println(Arrays.toString(ZerosToEnd.movezeros(n, arr)));
-        ZerosToEnd.methodTwo(n, arr);
+        // ZerosToEnd.methodTwo(n, arr);
+        ZerosToEnd.methodThree(n, arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 
@@ -63,6 +65,25 @@ public class ZerosToEnd {
 
     }
 
-    
+    static void methodThree(int n, int[] arr){
+        int j =-1;
+        for( int i =0; i<n; i++ ){
+            if(arr[i]==0){
+                j = i;
+                break;
+            }
+        }
+
+        for(int i =j+1; i<n; i++){
+            if(arr[i]!=0){
+                int temp = arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                j++;
+            }
+        }
+    }
+
+
 
 }
